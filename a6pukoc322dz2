@@ -1,0 +1,22 @@
+class Kit:
+
+    counter = 0
+    def __init__(self,n = "name", korm = 0):
+        self.name = n
+        self.korm = korm
+        Kit.counter+=1
+    def printInfo(self):
+        print(f"{Kit.counter} : {self.name}, korm = {self.korm}")
+
+    def addKorm(self,eda):
+        self.korm += eda
+
+    def subKorm(self, eda):
+        self.korm -= eda
+
+Murka = Kit("Murka")
+Murka.printInfo()
+Murka.addKorm(10)
+Murka.printInfo()
+Murka.subKorm(5)
+Murka.printInfo()
