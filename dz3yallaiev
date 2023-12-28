@@ -1,0 +1,24 @@
+class human:
+    def __init__(self, name):
+        self.name = name
+        self.car = None
+
+    def buy_car(self, car):
+        self.car = car
+        print(f'{self.name} Купив авто {car.марка}')
+
+    def водити(self):
+        if self.car is not None:
+            print(f'{self.name} Водить авто {self.car.марка}')
+        else:
+            print(f'{self.name} Немає авто')
+
+class car:
+    def __init__(self, марка):
+        self.марка = марка
+
+human1 = human('Stepan')
+car1 = car('BMW')
+
+human1.buy_car(car1)
+human1.водити()
