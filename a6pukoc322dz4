@@ -1,0 +1,30 @@
+#\\\...a6pukoc322 on top...///
+class ParentClass:
+
+   def init(self, parent_attr):
+
+       self.parent_attr = _attr
+
+   def parent_method(self):
+
+       print("Parent method")
+
+class ChildClass(ParentClass):
+
+   def init(self, parent_attr, child_attr):
+
+       super().init(parent_attr)
+
+       self.child_attr = child_attr
+
+   def child_method(self):
+
+       print("Child method")
+
+object1 = ChildClass("parent attribute", "child attribute")
+
+object1.parent_method()
+object1.child_method()
+
+print(object1.parent_attr)
+print(object1.child_attr)
