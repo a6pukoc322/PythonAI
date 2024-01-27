@@ -1,0 +1,34 @@
+def divider(a, b):
+    try:
+
+        return a / b
+
+    except ZeroDivisionError:
+
+        print("na 0 delit nelzya")
+
+        return 0
+
+    except TypeError:
+
+        print("only natural chisla bro")
+
+        return 0
+
+    except ValueError:
+
+        print("only natural chisla bro")
+
+        return 0
+
+
+data = {20: 20, "meow": 20, 20: 20,}
+
+result = []
+
+for key in data:
+    res = divider(key, data[key])
+
+    result.append(res)
+
+print(result)
