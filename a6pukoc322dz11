@@ -45,11 +45,20 @@ async def film(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     for film in range(len(listName)):
         await update.message.reply_text(f'{listName[film]} \n{listDes[film]}\n{listHref[film]}')
 
+async def answer(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    randomanswer1 = random.randint(0, 1)
+    if randomanswer1 == 0:
+        randomanswer2 = "no"
+    else:
+        randomanswer2 = "yes"
+    await update.message.reply_text(f'{randomanswer2}')
+
 app = ApplicationBuilder().token("6818903734:AAHwI-QSuXxvF9qMQGiXM57PLXpfFa5ADgQ").build()
 
 app.add_handler(CommandHandler("hello", hello))
 app.add_handler(CommandHandler("now", now))
 app.add_handler(CommandHandler("film", film))
 app.add_handler(CommandHandler("randomnumber", randomnumber))
+app.add_handler(CommandHandler("randomanswer", answer))
 
 app.run_polling()
